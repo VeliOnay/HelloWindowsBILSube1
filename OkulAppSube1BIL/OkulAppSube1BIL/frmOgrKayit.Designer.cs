@@ -29,12 +29,12 @@
         private void InitializeComponent()
         {
             this.grpOgrenci = new System.Windows.Forms.GroupBox();
-            this.txtAd = new System.Windows.Forms.TextBox();
-            this.txtSoyad = new System.Windows.Forms.TextBox();
-            this.txtNumara = new System.Windows.Forms.TextBox();
-            this.lblAd = new System.Windows.Forms.Label();
-            this.lblSoyad = new System.Windows.Forms.Label();
             this.lblNumara = new System.Windows.Forms.Label();
+            this.lblSoyad = new System.Windows.Forms.Label();
+            this.lblAd = new System.Windows.Forms.Label();
+            this.txtNumara = new System.Windows.Forms.TextBox();
+            this.txtSoyad = new System.Windows.Forms.TextBox();
+            this.txtAd = new System.Windows.Forms.TextBox();
             this.btnKaydet = new System.Windows.Forms.Button();
             this.grpOgrenci.SuspendLayout();
             this.SuspendLayout();
@@ -54,35 +54,14 @@
             this.grpOgrenci.TabStop = false;
             this.grpOgrenci.Text = "Öğrenci Bilgileri";
             // 
-            // txtAd
+            // lblNumara
             // 
-            this.txtAd.Location = new System.Drawing.Point(122, 72);
-            this.txtAd.Name = "txtAd";
-            this.txtAd.Size = new System.Drawing.Size(100, 20);
-            this.txtAd.TabIndex = 0;
-            // 
-            // txtSoyad
-            // 
-            this.txtSoyad.Location = new System.Drawing.Point(122, 100);
-            this.txtSoyad.Name = "txtSoyad";
-            this.txtSoyad.Size = new System.Drawing.Size(100, 20);
-            this.txtSoyad.TabIndex = 1;
-            // 
-            // txtNumara
-            // 
-            this.txtNumara.Location = new System.Drawing.Point(122, 129);
-            this.txtNumara.Name = "txtNumara";
-            this.txtNumara.Size = new System.Drawing.Size(100, 20);
-            this.txtNumara.TabIndex = 2;
-            // 
-            // lblAd
-            // 
-            this.lblAd.AutoSize = true;
-            this.lblAd.Location = new System.Drawing.Point(70, 79);
-            this.lblAd.Name = "lblAd";
-            this.lblAd.Size = new System.Drawing.Size(20, 13);
-            this.lblAd.TabIndex = 3;
-            this.lblAd.Text = "Ad";
+            this.lblNumara.AutoSize = true;
+            this.lblNumara.Location = new System.Drawing.Point(70, 132);
+            this.lblNumara.Name = "lblNumara";
+            this.lblNumara.Size = new System.Drawing.Size(44, 13);
+            this.lblNumara.TabIndex = 5;
+            this.lblNumara.Text = "Numara";
             // 
             // lblSoyad
             // 
@@ -93,14 +72,35 @@
             this.lblSoyad.TabIndex = 4;
             this.lblSoyad.Text = "Soyad";
             // 
-            // lblNumara
+            // lblAd
             // 
-            this.lblNumara.AutoSize = true;
-            this.lblNumara.Location = new System.Drawing.Point(70, 132);
-            this.lblNumara.Name = "lblNumara";
-            this.lblNumara.Size = new System.Drawing.Size(44, 13);
-            this.lblNumara.TabIndex = 5;
-            this.lblNumara.Text = "Numara";
+            this.lblAd.AutoSize = true;
+            this.lblAd.Location = new System.Drawing.Point(70, 79);
+            this.lblAd.Name = "lblAd";
+            this.lblAd.Size = new System.Drawing.Size(20, 13);
+            this.lblAd.TabIndex = 3;
+            this.lblAd.Text = "Ad";
+            // 
+            // txtNumara
+            // 
+            this.txtNumara.Location = new System.Drawing.Point(122, 129);
+            this.txtNumara.Name = "txtNumara";
+            this.txtNumara.Size = new System.Drawing.Size(100, 20);
+            this.txtNumara.TabIndex = 2;
+            // 
+            // txtSoyad
+            // 
+            this.txtSoyad.Location = new System.Drawing.Point(122, 100);
+            this.txtSoyad.Name = "txtSoyad";
+            this.txtSoyad.Size = new System.Drawing.Size(100, 20);
+            this.txtSoyad.TabIndex = 1;
+            // 
+            // txtAd
+            // 
+            this.txtAd.Location = new System.Drawing.Point(122, 72);
+            this.txtAd.Name = "txtAd";
+            this.txtAd.Size = new System.Drawing.Size(100, 20);
+            this.txtAd.TabIndex = 0;
             // 
             // btnKaydet
             // 
