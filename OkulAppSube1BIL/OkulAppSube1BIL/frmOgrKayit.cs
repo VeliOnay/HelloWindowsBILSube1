@@ -15,60 +15,108 @@ namespace OkulAppSube1BIL
 {
     public partial class frmOgrKayit : Form
     {
+        public int Ogrenciid { get; set; }
         public frmOgrKayit()
         {
             InitializeComponent();
-        }       
+        }
 
         private void btnKaydet_Click(object sender, EventArgs e)
+        {
+            {
+                var obl = new OgrenciBL();
+                try
+                {
+                    bool sonuc = obl.OgrenciEkle(new Ogrenci { Ad = txtAd.Text.Trim(), Soyad = txtSoyad.Text.Trim(), Numara = txtNumara.Text.Trim() });
+                    MessageBox.Show(sonuc ? "Ekleme Başarılı" : "Ekleme Başarısız");
+
+                    txtAd.Clear();
+                    txtSoyad.Clear();
+                    txtNumara.Clear();
+
+                }
+
+                catch (SqlException ex)
+                {
+                    switch (ex.Number)
+                    {
+                        case 2627:
+                            MessageBox.Show("Bu Numara daha önce kaydedilmiş!! ");
+                            break;
+                        default:
+                            MessageBox.Show("Veritabanı Hatası!");
+                            break;
+                    }
+                }
+                catch (Exception)
+                {
+
+                    MessageBox.Show("Bir Hata Oluştu!");
+                }
+            }
+
+        }
+        private void btnSil_Click(object sender, EventArgs e)
         {
             try
             {
                 var obl = new OgrenciBL();
-                bool sonuc = obl.OgrenciEkle(new Ogrenci { Ad = txtAd.Text.Trim(), Soyad = txtSoyad.Text.Trim(), Numara = txtNumara.Text.Trim() });
-                MessageBox.Show(sonuc ? "Ekleme Başarılı!" : "Ekleme Başarısız!!");
+                MessageBox.Show(obl.OgrenciEkle(new Ogrenci { Ad = txtAd.Text.Trim(), Soyad = txtSoyad.Text.Trim(), Numara = txtNumara.Text.Trim(), Ogrenciid = Ogrenciid }) ? "Güncelleme Başarılı" : "Güncelleme Başarısız!");
             }
-            catch (SqlException ex)
+            catch (SqlException)
             {
-                switch (ex.Number)
-                {
-                    case 2627:
-                        MessageBox.Show("Bu numaralı öğrenci daha önce kayıtlı");
-                        break;
-                    default:
-                        MessageBox.Show("Veritabanı hatası");
-                        break;
-                }
+
+                throw;
             }
             catch (Exception)
-            {                
-                MessageBox.Show("Bilinmeyen Hata!!");
+            {
+
+                throw;
+            }
+        }
+
+        private void btnBul_Click(object sender, EventArgs e)
+        {
+          try
+            {
+                var frm = new FrmOgrBul(this);
+                frm.Show();
+            }
+            catch (SqlException)
+            {
+
+                throw;
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+        }
+
+        private void btnGuncelle_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                var obl = new OgrenciBL();
+                MessageBox.Show(obl.OgrenciGuncelle(new Ogrenci { Ad = txtAd.Text.Trim(), Soyad = txtSoyad.Text.Trim(), Numara = txtNumara.Text.Trim(), Ogrenciid = Ogrenciid }) ? "Güncelleme Başarılı" : "Güncelleme Başarısız!");
+            }
+            catch (SqlException)
+            {
+
+                throw;
+            }
+            catch (Exception)
+            {
+
+                throw;
             }
         }
     }
-
-
-    interface ITransfer
-    {
-        int Eft(string gondericiiban, string aliciiban, double tutar);
-        int Havale(string gondericiiban, string aliciiban, double tutar);
-
     }
 
-    class Transfer : ITransfer
-    {
-        public int Eft(string gondericiiban, string aliciiban, double tutar)
-        {
-            throw new NotImplementedException();
-        }
 
-        public int Havale(string gondericiiban, string aliciiban, double tutar)
-        {
-            throw new NotImplementedException();
-        }
+    
 
-        //
-    }
-}
 
 //Garbage Collector

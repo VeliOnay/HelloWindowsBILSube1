@@ -29,6 +29,9 @@
         private void InitializeComponent()
         {
             this.grpOgrenci = new System.Windows.Forms.GroupBox();
+            this.btnBul = new System.Windows.Forms.Button();
+            this.btnGuncelle = new System.Windows.Forms.Button();
+            this.btnSil = new System.Windows.Forms.Button();
             this.lblNumara = new System.Windows.Forms.Label();
             this.lblSoyad = new System.Windows.Forms.Label();
             this.lblAd = new System.Windows.Forms.Label();
@@ -41,6 +44,9 @@
             // 
             // grpOgrenci
             // 
+            this.grpOgrenci.Controls.Add(this.btnBul);
+            this.grpOgrenci.Controls.Add(this.btnGuncelle);
+            this.grpOgrenci.Controls.Add(this.btnSil);
             this.grpOgrenci.Controls.Add(this.lblNumara);
             this.grpOgrenci.Controls.Add(this.lblSoyad);
             this.grpOgrenci.Controls.Add(this.lblAd);
@@ -49,10 +55,40 @@
             this.grpOgrenci.Controls.Add(this.txtAd);
             this.grpOgrenci.Location = new System.Drawing.Point(12, 12);
             this.grpOgrenci.Name = "grpOgrenci";
-            this.grpOgrenci.Size = new System.Drawing.Size(339, 202);
+            this.grpOgrenci.Size = new System.Drawing.Size(339, 238);
             this.grpOgrenci.TabIndex = 0;
             this.grpOgrenci.TabStop = false;
             this.grpOgrenci.Text = "Öğrenci Bilgileri";
+            // 
+            // btnBul
+            // 
+            this.btnBul.Location = new System.Drawing.Point(248, 172);
+            this.btnBul.Name = "btnBul";
+            this.btnBul.Size = new System.Drawing.Size(75, 23);
+            this.btnBul.TabIndex = 9;
+            this.btnBul.Text = "Bul";
+            this.btnBul.UseVisualStyleBackColor = true;
+            this.btnBul.Click += new System.EventHandler(this.btnBul_Click);
+            // 
+            // btnGuncelle
+            // 
+            this.btnGuncelle.Location = new System.Drawing.Point(147, 172);
+            this.btnGuncelle.Name = "btnGuncelle";
+            this.btnGuncelle.Size = new System.Drawing.Size(75, 23);
+            this.btnGuncelle.TabIndex = 8;
+            this.btnGuncelle.Text = "Güncelle";
+            this.btnGuncelle.UseVisualStyleBackColor = true;
+            this.btnGuncelle.Click += new System.EventHandler(this.btnGuncelle_Click);
+            // 
+            // btnSil
+            // 
+            this.btnSil.Location = new System.Drawing.Point(49, 173);
+            this.btnSil.Name = "btnSil";
+            this.btnSil.Size = new System.Drawing.Size(75, 23);
+            this.btnSil.TabIndex = 6;
+            this.btnSil.Text = "Sil";
+            this.btnSil.UseVisualStyleBackColor = true;
+            this.btnSil.Click += new System.EventHandler(this.btnSil_Click);
             // 
             // lblNumara
             // 
@@ -131,12 +167,16 @@
 
         private System.Windows.Forms.GroupBox grpOgrenci;
         private System.Windows.Forms.Label lblNumara;
-        private System.Windows.Forms.Label lblSoyad;
-        private System.Windows.Forms.Label lblAd;
-        private System.Windows.Forms.TextBox txtNumara;
-        private System.Windows.Forms.TextBox txtSoyad;
-        private System.Windows.Forms.TextBox txtAd;
-        private System.Windows.Forms.Button btnKaydet;
+        public System.Windows.Forms.Label lblSoyad;
+        public System.Windows.Forms.Label lblAd;
+        public System.Windows.Forms.TextBox txtNumara;
+        public System.Windows.Forms.TextBox txtSoyad;
+        public System.Windows.Forms.TextBox txtAd;
+        public System.Windows.Forms.Button btnKaydet;
+        public System.Windows.Forms.Button btnSil;
+        public System.Windows.Forms.Button btnBul;
+        public System.Windows.Forms.Button btnGuncelle;
+
     }
 }
 
